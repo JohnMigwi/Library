@@ -15,7 +15,7 @@ const validEmail = (val) => /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(val
     return (
       <React.Fragment>
           &nbsp;
-      <Button color="primary" outline onClick={props.toggleRegister}>                    
+      <Button color="white" outline onClick={props.toggleRegister}>                    
      <span className="fa fa-user-plus fa-lg"></span> Register
      </Button>
       </React.Fragment>
@@ -84,21 +84,18 @@ class Header extends Component{
                  <Navbar color="dark" dark expand="xl" fixed="top">
                     <div className="container">
                      <NavbarToggler onClick={this.toggleNav}></NavbarToggler>
-                     <NavbarBrand className="mr-auto text-primary" href="/home">
-                     Central Library
-                     </NavbarBrand>
                      <Collapse isOpen={this.state.isNavOpen} navbar>
                      <Nav navbar>
                         <NavItem className="ml-2" onClick={this.toggleNav}>
-                            <NavLink className="nav-link text-primary" to="/home">
+                            <NavLink className="nav-link text-white" to="/home">
                                <span className="fa fa-home fa-lg"/> Home
                            </NavLink>
                         </NavItem>
                         {this.props.auth.userinfo&&this.props.auth.userinfo.admin?(
                             <NavItem className="">
                             <Dropdown  isOpen={this.state.dropdownOpen} toggle={this.toggle}>
-                            <DropdownToggle color="Primary" >
-                            <div className="text-primary">
+                            <DropdownToggle color="White" >
+                            <div className="text-white">
                                                     <span className="fa fa-book fa-lg"/> Books
                                                    &nbsp; <i className="fa fa-caret-down fa-sm" aria-hidden="true"></i>
 
@@ -113,7 +110,7 @@ class Header extends Component{
                           </NavItem>
                         ):(
                             <NavItem className="ml-2" onClick={this.toggleNav}>
-                                  <NavLink className="nav-link text-primary" to="/books">
+                                  <NavLink className="nav-link text-white" to="/books">
                                                     <span className="fa fa-book fa-lg"/> Books
                                                 </NavLink>
                               </NavItem>
@@ -121,14 +118,14 @@ class Header extends Component{
                         )}
                         
                         <NavItem className="ml-2" onClick={this.toggleNav}>
-                            <NavLink className="nav-link text-primary" to="/search">
+                            <NavLink className="nav-link text-white" to="/search">
                                 <span className="fa fa-search fa-lg"/> Search
                             </NavLink>
                         </NavItem>
                         {
                             (this.props.auth.isAuthenticated)?(
                                 <NavItem onClick={this.toggleNav} className="ml-2">
-                                <NavLink className="nav-link text-primary" to="/profile">
+                                <NavLink className="nav-link text-white" to="/profile">
                                      <span className="fa fa-user-circle-o fa-lg"/> My Profile
                                 </NavLink>
                                 </NavItem>
@@ -138,7 +135,7 @@ class Header extends Component{
                         {
                             (this.props.auth.isAuthenticated&&!this.props.auth.userinfo.admin)?(
                                 <NavItem onClick={this.toggleNav} className="ml-2">
-                               <NavLink className="nav-link text-primary" to="/history">
+                               <NavLink className="nav-link text-white" to="/history">
                                      <span className="fa fa-history"/> Issue history
                                 </NavLink>
                                 </NavItem>
@@ -149,17 +146,17 @@ class Header extends Component{
                             (this.props.auth.isAuthenticated&&this.props.auth.userinfo.admin)?(
                               <React.Fragment>
                                 <NavItem onClick={this.toggleNav} className="ml-2">
-                                <NavLink className="nav-link text-primary" to="/issue">
+                                <NavLink className="nav-link text-white" to="/issue">
                                      <span className="fa fa-plus-square"/> Issue Book
                                 </NavLink>
                                 </NavItem>
                                 <NavItem onClick={this.toggleNav} className="ml-2">
-                                <NavLink className="nav-link text-primary" to="/return">
+                                <NavLink className="nav-link text-white" to="/return">
                                    <span className="fa fa-list-ul"/> Return Book
                                 </NavLink>
                                 </NavItem>
                                 <NavItem onClick={this.toggleNav} className="ml-2">
-                                <NavLink className="nav-link text-primary" to="/stats">
+                                <NavLink className="nav-link text-white" to="/stats">
                                    <span className="fa fa-info-circle"/> Stats
                                 </NavLink>
                                 </NavItem>
@@ -171,8 +168,8 @@ class Header extends Component{
                      <Nav className="ml-auto" navbar>
                      <NavItem>
                                     { !this.props.auth.isAuthenticated ?
-                        <Button outline color="primary" onClick={this.toggleModal}>
-                                            <span className="fa fa-sign-in fa-lg"></span> Login
+                        <Button outline color="white" onClick={this.toggleModal}>
+                                            <span className="fa fa-sign-in fa-lg"></span> SIGN IN
                                             {this.props.auth.isLoading ?
                                                 <span className="fa fa-spinner fa-pulse fa-fw"></span>
                                                 : null
@@ -181,7 +178,7 @@ class Header extends Component{
                                         :
                                         <div>
                                         <div className="navbar-text mr-3">{this.props.auth.user.username}</div>
-                                        <Button outline color="primary" onClick={this.handleLogout}>
+                                        <Button outline color="white" onClick={this.handleLogout}>
                                             <span className="fa fa-sign-out fa-lg"></span> Logout
                                             {this.props.auth.isLoading ?
                                                 <span className="fa fa-spinner fa-pulse fa-fw"></span>
@@ -214,7 +211,7 @@ class Header extends Component{
                                 <Input type="password" id="password" name="password"
                                     innerRef={(input) => this.password = input}  />
                             </FormGroup>
-                            <Button type="submit" value="submit" color="primary">Login</Button>
+                            <Button type="submit" value="submit" color="white">Login</Button>
                         </Form>
                     </ModalBody>
                      </Modal>
@@ -229,7 +226,7 @@ class Header extends Component{
                               username: values.username,
                                password: values.password,
                                email: values.email,
-                               roll: values.roll,
+                               Adm: values.roll,
                                firstname: values.firstname,
                                lastname: values.lastname });
                               }}>
@@ -262,9 +259,9 @@ class Header extends Component{
                             minLength: ' Must be greater than 2 characters', maxLength:' Must be 20 characters or less'}}/>
                             </FormGroup>
                             <FormGroup>    
-                                 <Label htmlFor="roll">Roll No.</Label>
+                                 <Label htmlFor="roll">Admission No.</Label>
                                 <Control.text model=".roll" id="roll" name="roll" 
-                            className="form-control" placeholder="roll" validators={{required,minLength: minLength(3),maxLength:maxLength(12)}} />
+                            className="form-control" placeholder="admission no." validators={{required,minLength: minLength(3),maxLength:maxLength(12)}} />
                             <Errors className="text-danger" model=".roll" show="touched" messages={{required: 'Required',
                             minLength: ' Must be greater than 2 characters', maxLength:' Must be 12 characters or less'}}/>
                             </FormGroup>
@@ -275,7 +272,7 @@ class Header extends Component{
                             <Errors className="text-danger" model=".email" show="touched" messages={{required: 'Required',
                             validEmail: ' Enter a valid email'}}/>
                             </FormGroup>
-                            <Button type="submit" value="submit" color="primary">Sign Up</Button>
+                            <Button type="submit" value="submit" color="white">Sign Up</Button>
                         </LocalForm>
                      </ModalBody>
                  </Modal>
