@@ -56,3 +56,12 @@ width: 100vw;
   .loading{
 min-height: 100vh;
   }
+
+  .btn{
+    color: rgb(255, 255, 255);
+  }
+
+
+  .bg-dark {
+    background-color: black !important;
+}

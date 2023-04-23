@@ -216,7 +216,7 @@ class Header extends Component{
                     </ModalBody>
                      </Modal>
                  <Modal isOpen={this.state.isRegisterOpen} toggle={this.toggleRegister}>
-                     <ModalHeader toggle={this.toggleRegister}>
+                     <ModalHeader style={"color: white;"} toggle={this.toggleRegister}>
                          Register 
                      </ModalHeader>
                      <ModalBody>
