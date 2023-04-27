@@ -127,6 +127,7 @@ render(){
                                 values.newpassword);     
                                }
                         else {
+                        //check password matched
                             alert("Your passwords didn't match. Please try again");
                         }
                                  }}>
