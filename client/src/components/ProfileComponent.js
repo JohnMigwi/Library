@@ -114,6 +114,7 @@ render(){
                      </ModalBody>
                
           </Modal>
+          {//perofile }
 
           <Modal isOpen={this.state.isPasswordModalOpen} toggle={this.togglePasswordModal}>
                      <ModalHeader toggle={this.togglePasswordModal}>
