@@ -77,7 +77,7 @@ class Header extends Component{
           isModalOpen: !this.state.isModalOpen
         });
       }
-//serve heads
+
     render(){
         return (
             <React.Fragment>
